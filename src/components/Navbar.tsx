@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Link,
   Spacer,
   Menu,
   MenuList,
@@ -9,13 +8,14 @@ import {
   MenuButton,
   IconButton,
 } from "@chakra-ui/react";
-import { FcMenu, FcAbout, FcHome } from "react-icons/fc";
+import { FcMenu } from "react-icons/fc";
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <Flex p={3} m={3}>
       <Box fontSize="3xl" fontWeight="bold">
-        <Link href="/" color="red.400">
+        <Link to="/">
           Read.
         </Link>
       </Box>
@@ -25,17 +25,11 @@ const Navbar = () => {
         <MenuButton as={IconButton} icon={<FcMenu/>} variant="outlined" color="red.400" fontSize="2rem"  />
 
           <MenuList>
-            <Link href="/">
-              <MenuItem icon={<FcHome />} >Home</MenuItem>
-            </Link>
-            <Link href="/">
+            <Link to="/register">
               <MenuItem>Register</MenuItem>
             </Link>
-            <Link href="/">
+            <Link to="/login">
               <MenuItem>Login</MenuItem>
-            </Link>
-            <Link href="/">
-              <MenuItem icon={<FcAbout />}>About</MenuItem>
             </Link>
           </MenuList>
         </Menu>
